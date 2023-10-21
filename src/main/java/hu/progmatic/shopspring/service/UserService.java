@@ -21,10 +21,6 @@ public class UserService {
         return userRepo.findById(id).orElse(null);
     }
 
-    public List<User> findAllUser(String name,String birthPlace, LocalDate birthDate, String email){
-        return userRepo.findAllUser(name, birthPlace,  birthDate, email);
-    }
-
     public void saveUser(User user) {
         userRepo.save(user);
     }

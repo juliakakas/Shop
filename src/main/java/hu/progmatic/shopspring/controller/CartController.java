@@ -28,14 +28,15 @@ public class CartController {
     @GetMapping("/new")
     public String createCart(Model model, @ModelAttribute("cart") Cart cart){
         System.out.println(cart);
-        model.addAttribute("cart", cart);
+        model.addAttribute("cart",new Cart());
         model.addAttribute("users", userService.getAllUsers());
+        model.addAttribute("post_url", "/new");
         return "new-cart";
     }
 
     @PostMapping("/new")
     public String createCart(@ModelAttribute("cart") Cart cart){
-        cartService.save(cart);
+        cartService.saveCart(cart);
         return "redirect:/cart";
     }
 }

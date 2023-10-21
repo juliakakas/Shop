@@ -1,21 +1,26 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<form th:action="@{/cart/new}" method="post" th:object="${cart}">
+<form th:action="@{'/cart' + ${post_url}}" method="post">
     <label for="user">User:</label>
     <select id="user" name="user.id">
         <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.username}"></option>
     </select>
-
-    <input type="hidden" id="shop" name="shop" th:value="${cart.shop}" />
-    <input type="hidden" id="product" name="product" th:value="${cart.product}" />
-    <input type="hidden" id="price" name="price" th:value="${cart.price}" />
+    <input type="text" th:value="${cart.shop}"
+           th:placeholder="${cart.shop} != null ? ${cart.shop} : 'pl.: Shop'"
+           th:field="*{cart.shop}" />
+    <input type="text" th:value="${cart.product}"
+           th:placeholder="${cart.product} != null ? ${cart.product} : 'pl.: Product'"
+           th:field="*{cart.product}" />
+    <input type="text" th:value="${cart.price}"
+           th:placeholder="${cart.price} != null ? ${cart.price} : 'pl.: Price'"
+           th:field="*{cart.price}" />
 
     <button type="submit">OK</button>
 </form>
+
 </body>
 </html>

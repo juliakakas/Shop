@@ -13,16 +13,12 @@ import java.util.List;
 public class CartService {
     private final CartRepo cartRepo;
 
-    public void save(Cart cart) {
+    public void saveCart(Cart cart) {
         cartRepo.save(cart);
     }
 
     public List<Cart> getAllCarts() {
         return cartRepo.findAll();
-    }
-
-    public List<Cart> findAllCart(String shop, String order, Integer price){
-        return cartRepo.findAllCart(shop, order, price);
     }
 
     @Transactional

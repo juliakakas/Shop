@@ -8,7 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CartRepo extends JpaRepository<Cart,Integer> {
-    List<Cart> findAllCart(String shop, String product, Integer price);
-
     void removeByUserId(Integer id);
 }
