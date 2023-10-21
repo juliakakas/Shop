@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CartRepo extends JpaRepository<Cart,Integer> {
-    void removeByUserId(Integer id);
+    void removeByUserId(Integer user);
 }

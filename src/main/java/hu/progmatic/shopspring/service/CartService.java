@@ -22,8 +22,8 @@ public class CartService {
     }
 
     @Transactional
-    public void deleteCartByUserId(Integer id) {
-        cartRepo.removeByUserId(id);
+    public void deleteCartByUserId(Integer user) {
+        cartRepo.removeByUserId(user);
     }
 
 
