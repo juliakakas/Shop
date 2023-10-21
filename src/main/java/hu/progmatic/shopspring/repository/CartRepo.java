@@ -4,12 +4,11 @@ import hu.progmatic.shopspring.model.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Repository
 public interface CartRepo extends JpaRepository<Cart,Integer> {
-    List<Cart> findAllCart(String shop, String order, Integer price, Integer userNumber);
+    List<Cart> findAllCart(String shop, String order, Integer price);
 
-    void removeByUserNumber(Integer userNumber);
+    void removeByUserId(Integer id);
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/home}">Home</a>
+<table>
+    <thead>
+    <tr>
+        <td>Shop</td>
+        <td>Product</td>
+        <td>Price</td>
+        <td>Who</td>
+    </tr>
+    </thead>
+    <tr th:each="cart : ${carts}">
+        <td th:text="${cart.shop}"></td>
+        <td th:text="${cart.product}"></td>
+        <td th:text="${cart.price}"></td>
+        <td th:text="${cart.user.username}"></td>
+
+
+        <td>
+            <a th:href="@{'/user/' + ${cart.user.id}}">
+                <p th:text="${cart.user.id}"></p>
+            </a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{'/user' + ${post_url}}" method="post">
+    <input type="hidden"
+           th:value="${user.id}"
+           th:field="*{user.id}">
+    <input type="text"
+           th:value="${user.username}"
+           th:placeholder="${user.username} != null ? ${user.username} : 'pl.: Gipsz Jakab'"
+           th:field="*{user.username}">
+    <input type="text"
+           th:value="${user.birthPlace}"
+           th:placeholder="${user.birthPlace} != null ? ${user.birthPlace} : 'pl.: Budapest'"
+           th:field="*{user.birthPlace}">
+    <input type="date"
+           th:value="${user.birthDate}"
+           th:placeholder="${user.birthDate}"
+           th:field="*{user.birthDate}">
+    <input type="text"
+           th:value="${user.email}"
+           th:placeholder="${user.email} != null ? ${user.email} : 'pl.: kis.pista@exaple.com'"
+           th:field="*{user.email}">
+    <button type="submit">OK</button>
+</form>
+</body>
+</html>

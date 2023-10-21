@@ -29,7 +29,7 @@ public class CartController {
     public String createCart(Model model, @ModelAttribute("cart") Cart cart){
         System.out.println(cart);
         model.addAttribute("cart", cart);
-        model.addAttribute("user", userService.getAllUsers());
+        model.addAttribute("users", userService.getAllUsers());
         return "new-cart";
     }
 

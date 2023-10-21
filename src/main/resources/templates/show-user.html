@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/home}">Home</a>
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Birthplace</td>
+        <td>Birth Date</td>
+        <td>Email</td>
+    </tr>
+    </thead>
+    <tr>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.birthPlace}"></td>
+        <td th:text="${user.birthDate}"></td>
+        <td th:text="${user.email}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,13 +1,11 @@
 package hu.progmatic.shopspring.service;
 
 import hu.progmatic.shopspring.model.Cart;
-import hu.progmatic.shopspring.model.User;
 import hu.progmatic.shopspring.repository.CartRepo;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -23,13 +21,13 @@ public class CartService {
         return cartRepo.findAll();
     }
 
-    public List<Cart> findAllCart(String shop, String order, Integer price, Integer userNumber){
-        return cartRepo.findAllCart(shop, order, price, userNumber);
+    public List<Cart> findAllCart(String shop, String order, Integer price){
+        return cartRepo.findAllCart(shop, order, price);
     }
 
     @Transactional
-    public void deleteCartByUserNumber(Integer userNumber) {
-        cartRepo.removeByUserNumber(userNumber);
+    public void deleteCartByUserId(Integer id) {
+        cartRepo.removeByUserId(id);
     }
 
 

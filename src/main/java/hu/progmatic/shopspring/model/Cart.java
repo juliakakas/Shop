@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,9 +14,8 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String shop;
-    private String oder;
+    private String product;
     private Integer price;
-    private Integer userNumber;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/cart/new}" method="post" th:object="${cart}">
+    <label for="user">User:</label>
+    <select id="user" name="user.id">
+        <option th:each="user : ${users}" th:value="${user.id}" th:text="${user.username}"></option>
+    </select>
+
+    <input type="hidden" id="shop" name="shop" th:value="${cart.shop}" />
+    <input type="hidden" id="product" name="product" th:value="${cart.product}" />
+    <input type="hidden" id="price" name="price" th:value="${cart.price}" />
+
+    <button type="submit">OK</button>
+</form>
+
+</body>
+</html>
